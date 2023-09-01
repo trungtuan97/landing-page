@@ -1,5 +1,5 @@
 import { Carousel } from "antd";
-import React from "react";
+import React, { useState } from "react";
 const contentStyle = {
   width: "402px",
 };
@@ -8,13 +8,14 @@ const carouselSettings = {
   slidesToScroll: 1,
 };
 function AlentCarousel() {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="mt-10 px-8">
       <div className="my-2 h-[23px] relative">
         <hr className="" />
         <div className=" absolute left-0 top-[-10px] rounded-lg w-[123px] h-[13px] bg-[#F68D1D] "></div>
       </div>
-      <div className="">
+      <div className=" ">
         <h1 className="text-[48px] font-semibold	">
           TÌM KIẾM TÀI NĂNG & QUẢN LÝ CÔNG VIỆC TRUYỀN THỐNG
         </h1>
@@ -23,38 +24,24 @@ function AlentCarousel() {
           có nhiều sự phức tạp và rào cản
         </p>
       </div>
-      <Carousel autoplay {...carouselSettings}>
-        <div>
-          <div
-            style={contentStyle}
-            id="part-1"
-            className="text-[#1F1F1F] relative flex flex-col "
-          >
-            <img
-              src="workplace-violence-taking-place-colleagues 1.png"
-              alt=""
-            />
-            <div className=" text-left ">
-              <span className="text-[24px]">
-                <b>GIAO TIẾP VÀ TỔ CHỨC</b>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div>
+      <Carousel {...carouselSettings}>
+        <div
+          onMouseOver={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           <div
             style={contentStyle}
             id="part-2"
-            className="text-[#1F1F1F] relative flex flex-col "
+            className="relative  text-[#1F1F1F] relative flex flex-col "
           >
             <img
-              src="workplace-violence-taking-place-colleagues 1 (1).png"
+              className=""
+              src="workplace-violence-taking-place-colleagues 1.png"
               alt=""
             />
-            <div className=" text-left ">
+            <div className=" text-left  absolute bottom-0 bg-white w-full">
               <h1 className="text-[24px]">GIAO TIẾP VÀ TỔ CHỨC</h1>
-              <b>
+              <b className={isHovered ? "" : "hidden"}>
                 Phối hợp các nhiệm vụ, cập nhật và phản hồi giữa khách hàng và
                 dịch giả tự do thường liên quan đến các email, cuộc trò truyện
                 và tài liệu rải rác. Giao tiếp bị phận mảnh này dẫn đến hiểu

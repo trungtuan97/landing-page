@@ -3,7 +3,7 @@ import React from "react";
 
 function Advantage() {
   return (
-    <div className="mt-10 px-8 bg-[#fff9f3]">
+    <div className="pt-10 px-8 bg-[#fff9f3]">
       <div className="my-2 h-[23px] relative mb-6">
         <hr className="" />
         <div className=" absolute left-0 top-[-10px] rounded-lg w-[123px] h-[13px] bg-[#F68D1D] "></div>
